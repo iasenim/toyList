@@ -108,11 +108,9 @@ const forEach = (fn, lst) => {
     }
 };
 
-const delay_wihoutMemo = (fn) => () =>fn;
-
 const delay = (fn) => (() => fn);
 const force = (fn) => fn();
 const cons_stream = (a, b) => cons(a, delay(b));
 const stream_car = (s) => car(s);
 const stream_cdr = (s) => force(cdr(s));
-export {cons, car, cdr, length, listRef, iota, arrayToList, list, map, forEach, delay, force};
+export {cons, car, cdr, length, listRef, iota, arrayToList, list, map, reduce, forEach, delay, force, cons_stream, stream_car, stream_cdr};

@@ -29,7 +29,7 @@ undefined
 ```
 
 _Disclammer_: I wrote these functions to help me to learn javascript. These functions are not 
-meant to be useful. Expect some weird behaviors if used outside of their domain, such as
+meant to be used in productn. Expect some weird behaviors if used outside of their domain, such as
 
 ```javascript
 cdr(() => 1) 
