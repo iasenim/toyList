@@ -46,6 +46,10 @@ const listRef = (l, n) => {
 };
 
 const iota = (count, start, step) => {
+    if(count < 0)
+    {
+        throw new Error("count must be non-negative");
+    }
     if(!start)
     {
         start = 0;
@@ -58,7 +62,8 @@ const iota = (count, start, step) => {
     {
         return void 0;
     }
-    else {
+    else
+    {
         return cons(start, iota(count - 1, start + step, step)); 
     }
 };
@@ -73,6 +78,12 @@ const arrayToList = (a) => {
 };
 
 const list = (...args) => arrayToList(args);
+
+const listToArray = (lst) => {
+    var a = [];
+    forEach((x) => a.push(x), lst);
+    return a;
+};
 
 const map = (fn, lst) => {
     if(isNullList(lst))
@@ -92,7 +103,7 @@ const reduce = (op, init, lst) => {
     }
     else
     {
-        return reduce(op, init + car(lst), cdr(lst));
+        return reduce(op, op(init, car(lst)), cdr(lst));
     }
 };
     
@@ -108,9 +119,5 @@ const forEach = (fn, lst) => {
     }
 };
 
-const delay = (fn) => (() => fn);
-const force = (fn) => fn();
-const cons_stream = (a, b) => cons(a, delay(b));
-const stream_car = (s) => car(s);
-const stream_cdr = (s) => force(cdr(s));
-export {cons, car, cdr, length, listRef, iota, arrayToList, list, map, reduce, forEach, delay, force, cons_stream, stream_car, stream_cdr};
+export {cons, car, cdr, length, listRef, iota, 
+        arrayToList, list, map, reduce, forEach};
