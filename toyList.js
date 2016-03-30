@@ -119,5 +119,8 @@ const forEach = (fn, lst) => {
     }
 };
 
+const isPair = (lst) => (typeof(lst) == "function" && 
+                         (cdr(lst) == void 0 || typeof (cdr(lst)) == "function"));
+
 export {cons, car, cdr, length, listRef, iota, 
         arrayToList, list, map, reduce, forEach};

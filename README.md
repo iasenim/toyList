@@ -17,7 +17,7 @@ Here are some details:
   * `list([1, 2, 3])`: create a list from an array.
   * `iota(count, start, step)`: create a list with length `count`, 
   where `count` must be non-negative.
-   `start` and `step` are optinal, both with a default value `1`. 
+   `start` and `step` are optinal, with default values `0` and `1`, respectively. 
    Example: `iota(3, 0, 0.1) //=> (0, 0.1, 0.2)`.
    4. `cons(item, lst)`: construct a new list by adding `item` to `lst`.
 2. Selectors:
