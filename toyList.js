@@ -3,17 +3,17 @@ const cons = (a, b) => (fn) => fn(a, b);
 const car = (c) => c((a, b) => a);
 
 const cdr = (c) => {
-    if(typeof(c) == "function")
+    if(typeof(c) === "function")
         return c((a, b) => b);
     else
         throw new Error("Cannot cdr on an empty list");
 };
 
-const isNullList = (l) => l == void 0;
+const isNullList = (l) => l === void 0;
 
 const length = (l) => {
     const length_iter = (ls, n) => {
-        if(ls == void 0)
+        if(ls === void 0)
         {
             return n;
         }
@@ -31,11 +31,11 @@ const length = (l) => {
 };
 
 const listRef = (l, n) => {
-    if((l == void 0))
+    if((l === void 0))
     {
         throw new Error("Out of range");
     }
-    if(n == 0)
+    if(n === 0)
     {
         return car(l);
     }
@@ -119,8 +119,8 @@ const forEach = (fn, lst) => {
     }
 };
 
-const isPair = (lst) => (typeof(lst) == "function" && 
-                         (cdr(lst) == void 0 || typeof (cdr(lst)) == "function"));
+const isPair = (lst) => (typeof(lst) === "function" && 
+                         (cdr(lst) === void 0 || typeof (cdr(lst)) === "function"));
 
 export {cons, car, cdr, length, listRef, iota, 
         arrayToList, list, map, reduce, forEach};

@@ -2,7 +2,7 @@
 *A toy functional list in javascript*
 
 This is a javascript implementation of a small subset of the list related functions found 
-in Scheme. `cons`, `car`, and `cdr` are constructed using only functions, for details, go 
+in Scheme. `cons`, `car`, and `cdr` are constructed using only anonymous functions or lambdas, for details, go 
 [here](http://research.microsoft.com/en-us/um/people/simonpj/papers/slpj-book-1987/).
 
 All the functions assume a given list is proper. A proper list is defined recursively as follows
