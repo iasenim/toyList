@@ -148,5 +148,5 @@ var inList = list(4, 2, 5, 1, 8, 6, 3, 7);
 var preList = list(1, 2, 4, 5, 3, 6, 8, 7);
 
 var tree = buildTree(inList, preList);
-var postList = postorder(tree);
-console.log(postList); //should be [ 4, 5, 2, 8, 6, 7, 3, 1 ]
+var postArray = postorder(tree);
+console.log(postArray); //should be [ 4, 5, 2, 8, 6, 7, 3, 1 ]

@@ -13,13 +13,13 @@ All the functions assume a given list is proper. A proper list is defined recurs
 Here are some details:
 
 1. Constructors:
-  * `list(x, y, z,...)`: create a list from the arguments.
-  * `list([1, 2, 3])`: create a list from an array.
-  * `iota(count, start, step)`: create a list with length `count`, 
+  * `list(x, y, z,...)`: creates a list from the arguments.
+  * `list([1, 2, 3])`: creates a list from an array.
+  * `iota(count, start, step)`: creates a list with length `count`, 
   where `count` must be non-negative.
    `start` and `step` are optinal, with default values `0` and `1`, respectively. 
    Example: `iota(3, 0, 0.1) //=> (0, 0.1, 0.2)`.
-   4. `cons(item, lst)`: construct a new list by adding `item` to `lst`.
+   4. `cons(item, lst)`: constructs a new list by adding `item` to `lst`.
 2. Selectors:
   * `listRef(lst, n)`: returns the n-th element in `lst`.
   * `car`: returns the first element
@@ -44,6 +44,14 @@ forEach((x) => console.log(x), map(Math.sin, iota(6, 0, Math.PI/6)))
 0.5000000000000003
 undefined
 */
+
+//Reconstruct a binary tree from pre-order and in-order traversals:
+var inList = list(4, 2, 5, 1, 8, 6, 3, 7);
+var preList = list(1, 2, 4, 5, 3, 6, 8, 7);
+
+var tree = buildTree(inList, preList);
+var postArray= postorder(tree);
+console.log(postArray); //should be [ 4, 5, 2, 8, 6, 7, 3, 1 ]
 
 ```
 
