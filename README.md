@@ -10,7 +10,7 @@ All the functions assume a given list is proper. A proper list is defined recurs
 1. the empty list (represented as `undefined` in js) is a proper list
 2. a list constructed from adding one more item to the head of a proper list (using `cons`)
 
-Here are some details:
+## Details:
 
 1. Constructors:
   * `list(x, y, z,...)`: creates a list from the arguments.
@@ -27,7 +27,7 @@ Here are some details:
 3. Utilities: `length`, `map`, `reduce`, `forEach`, 
    and `listToArray`, etc.
 
-Examples:
+## Examples:
 
 ```javascript
 reduce((x, y) => x + y, 0, map(((x) => x * x), iota(100)))
