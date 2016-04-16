@@ -54,13 +54,3 @@ var postArray= postorder(tree);
 console.log(postArray); //should be [ 4, 5, 2, 8, 6, 7, 3, 1 ]
 
 ```
-
-_Disclammer_: I wrote these functions to help me to learn javascript. These functions are not 
-meant to be used in productn. Expect some weird behaviors if used outside of their domain, such as
-
-```javascript
-cdr(() => 1) 
-//=> 1
-car(() => 1) 
-//=> 1
-``` 
