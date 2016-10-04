@@ -1,6 +1,11 @@
 const cons = (a, b) => (fn) => fn(a, b);
 
-const car = (c) => c((a, b) => a);
+const car = (c) => {
+    if(typeof(c) === "function")
+        return c((a, b) => a);
+    else
+        throw new Error("Cannot car on an empty list");
+};
 
 const cdr = (c) => {
     if(typeof(c) === "function")
